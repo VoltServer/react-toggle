@@ -22538,7 +22538,9 @@
 	      var _props = this.props,
 	          className = _props.className,
 	          _icons = _props.icons,
-	          inputProps = _objectWithoutProperties(_props, ['className', 'icons']);
+	          ariaLabel = _props["aria-label"],
+	          ariaLabelledBy = _props["aria-labelledby"],
+	          inputProps = _objectWithoutProperties(_props, ['className', 'icons', "aria-label", "aria-labelledby"]);
 	
 	      var classes = (0, _classnames2.default)('react-toggle', {
 	        'react-toggle--checked': this.state.checked,
@@ -22549,6 +22551,10 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: classes,
+	          role: 'switch',
+	          'aria-checked': inputProps.checked,
+	          'aria-label': ariaLabel,
+	          'aria-labelledby': ariaLabelledBy,
 	          onClick: this.handleClick,
 	          onTouchStart: this.handleTouchStart,
 	          onTouchMove: this.handleTouchMove,
