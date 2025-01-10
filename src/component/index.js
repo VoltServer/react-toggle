@@ -173,7 +173,7 @@ export default class Toggle extends PureComponent {
           {...inputProps}
           ref={ref => { this.input = ref }}
           hidden='hidden'
-          className='react-toggle-screenreader-only'
+          className='react-toggle-hidden-input'
           type='checkbox' />
       </div>
     )
