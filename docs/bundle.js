@@ -22538,9 +22538,9 @@
 	      var _props = this.props,
 	          className = _props.className,
 	          _icons = _props.icons,
-	          ariaLabel = _props["aria-label"],
-	          ariaLabelledBy = _props["aria-labelledby"],
-	          inputProps = _objectWithoutProperties(_props, ['className', 'icons', "aria-label", "aria-labelledby"]);
+	          ariaLabel = _props['aria-label'],
+	          ariaLabelledBy = _props['aria-labelledby'],
+	          inputProps = _objectWithoutProperties(_props, ['className', 'icons', 'aria-label', 'aria-labelledby']);
 	
 	      var classes = (0, _classnames2.default)('react-toggle', {
 	        'react-toggle--checked': this.state.checked,
@@ -22553,6 +22553,7 @@
 	        { className: classes,
 	          role: 'switch',
 	          'aria-checked': inputProps.checked,
+	          'aria-disabled': this.props.disabled,
 	          'aria-label': ariaLabel,
 	          'aria-labelledby': ariaLabelledBy,
 	          onClick: this.handleClick,
@@ -22580,6 +22581,7 @@
 	          },
 	          onFocus: this.handleFocus,
 	          onBlur: this.handleBlur,
+	          hidden: 'hidden',
 	          className: 'react-toggle-screenreader-only',
 	          type: 'checkbox' }))
 	      );

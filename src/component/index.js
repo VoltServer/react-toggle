@@ -136,8 +136,8 @@ export default class Toggle extends PureComponent {
     const {
       className,
       icons: _icons,
-      "aria-label": ariaLabel,
-      "aria-labelledby": ariaLabelledBy,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       ...inputProps
     } = this.props
     const classes = classNames('react-toggle', {
@@ -150,9 +150,12 @@ export default class Toggle extends PureComponent {
       <div className={classes}
         role='switch'
         aria-checked={inputProps.checked}
+        aria-disabled={this.props.disabled}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         onClick={this.handleClick}
+        onFocus={this.handleFocus}
+        onBlur={this.handleBlur}
         onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}>
@@ -169,8 +172,7 @@ export default class Toggle extends PureComponent {
         <input
           {...inputProps}
           ref={ref => { this.input = ref }}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
+          hidden='hidden'
           className='react-toggle-screenreader-only'
           type='checkbox' />
       </div>
